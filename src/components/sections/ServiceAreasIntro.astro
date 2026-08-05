@@ -1,0 +1,125 @@
+<section class="service-intro">
+  <div class="container intro-grid">
+
+    <div class="intro-content">
+
+      <span class="overline">
+        OUR SERVICE AREA
+      </span>
+
+      <h2>
+        A County Worth Knowing
+      </h2>
+
+      <p>
+        Whatcom County is small enough to cover properly and varied enough that
+        local knowledge actually matters. A furnace in a 1910 house in the
+        Lettered Streets has different problems from one in a 1990s build in
+        Ferndale, which has different problems again from a place out past
+        Everson where the nearest gas main is a long way off and the heat is
+        electric or propane.
+      </p>
+
+      <p>
+        We work the whole county rather than a radius around one neighbourhood,
+        and we carry parts for old equipment as well as new, because both are
+        out there in roughly equal numbers.
+      </p>
+
+    </div>
+
+    <div class="intro-image">
+
+      <img
+        src="/images/areas-hub-hero.webp"
+        alt="Heating Repair Across Whatcom County"
+      >
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+.service-intro{
+padding:110px 24px;
+background:#fff;
+}
+
+.container{
+width:min(1180px,100%);
+margin:auto;
+}
+
+.intro-grid{
+display:grid;
+grid-template-columns:1fr 520px;
+gap:60px;
+align-items:center;
+}
+
+.overline{
+display:inline-block;
+margin-bottom:18px;
+font-size:.8rem;
+font-weight:800;
+letter-spacing:2px;
+color:#f97316;
+}
+
+.overline::after{
+content:"";
+display:block;
+width:70px;
+height:3px;
+margin-top:10px;
+background:#f97316;
+border-radius:999px;
+}
+
+.intro-content h2{
+font-size:clamp(2.4rem,4vw,3.5rem);
+line-height:1.1;
+margin-bottom:26px;
+color:#0f172a;
+}
+
+.intro-content p{
+font-size:1.06rem;
+line-height:1.9;
+color:#64748b;
+margin-bottom:22px;
+}
+
+.intro-image{
+overflow:hidden;
+border-radius:24px;
+box-shadow:0 24px 60px rgba(15,23,42,.15);
+}
+
+.intro-image img{
+width:100%;
+height:620px;
+display:block;
+object-fit:cover;
+transition:.6s;
+}
+
+.intro-image:hover img{
+transform:scale(1.05);
+}
+
+@media(max-width:991px){
+
+.intro-grid{
+grid-template-columns:1fr;
+}
+
+.intro-image img{
+height:420px;
+}
+
+}
+
+</style>

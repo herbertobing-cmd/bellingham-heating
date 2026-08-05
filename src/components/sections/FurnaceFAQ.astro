@@ -1,0 +1,67 @@
+---
+const faqs = [
+  {
+    question: "How much does furnace repair cost?",
+    answer: "Every repair starts with a flat diagnostic visit. After diagnosing the issue, we explain the problem and provide the repair cost before any work begins."
+  },
+  {
+    question: "Do you offer same-day service?",
+    answer: "Yes. We offer same-day appointments whenever availability allows, especially for homes with no heat."
+  },
+  {
+    question: "Should I repair or replace my furnace?",
+    answer: "If your furnace can be repaired safely and economically, we'll recommend repairing it. We do not push unnecessary replacements."
+  },
+  {
+    question: "What furnace brands do you repair?",
+    answer: "We service most major residential furnace brands, including older systems whenever parts are available."
+  },
+  {
+    question: "Do you provide emergency furnace repair?",
+    answer: "Yes. If your heating system stops working unexpectedly, contact us and we'll schedule the earliest available appointment."
+  }
+];
+---
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="overline">FREQUENTLY ASKED QUESTIONS</span>
+      <h2>Questions We Hear Every Day</h2>
+      <p>Still have questions? Here are answers to the ones homeowners ask most often.</p>
+    </div>
+
+    <div class="faq-list">
+      {faqs.map((faq) => (
+        <details class="faq-item">
+          <summary>
+            <span>{faq.question}</span>
+            <span class="plus">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-section{padding:110px 24px;background:#f8fafc}
+.container{width:min(1000px,100%);margin:auto}
+.section-header{text-align:center;max-width:760px;margin:0 auto 56px}
+.overline{display:inline-block;color:#ea580c;font-size:.8rem;font-weight:800;letter-spacing:2px;margin-bottom:16px}
+.overline:after{content:"";display:block;width:64px;height:3px;background:#f97316;margin:10px auto 0;border-radius:999px}
+.section-header h2{margin:0 0 18px;font-size:clamp(2.2rem,4vw,3.2rem);color:#0f172a}
+.section-header p{color:#64748b;line-height:1.8}
+.faq-list{display:grid;gap:18px}
+.faq-item{background:#fff;border:2px solid #e8edf3;border-radius:18px;overflow:hidden;transition:.3s}
+.faq-item[open]{border-color:#f97316;box-shadow:0 0 22px rgba(249,115,22,.15)}
+summary{cursor:pointer;list-style:none;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;font-weight:700;color:#0f172a}
+summary::-webkit-details-marker{display:none}
+.plus{font-size:28px;color:#f97316;transition:.3s}
+.faq-item[open] .plus{transform:rotate(45deg)}
+.faq-answer{padding:0 28px 24px}
+.faq-answer p{margin:0;color:#64748b;line-height:1.8}
+</style>

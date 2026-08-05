@@ -1,0 +1,261 @@
+<section class="process">
+
+<div class="container">
+
+<span class="overline">
+HOW IT WORKS
+</span>
+
+<h2>
+Four Steps,
+No Surprises
+</h2>
+
+<p class="intro">
+Simple process. Honest diagnosis. No pressure.
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="number">1</div>
+
+<h3>You call or send a message</h3>
+
+<p>
+Tell us what the system is doing and whether you have no heat at all.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="number">2</div>
+
+<h3>We give you a window</h3>
+
+<p>
+You know when we are coming and what the diagnostic fee is before we leave.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="number">3</div>
+
+<h3>We diagnose</h3>
+
+<p>
+We watch the heating cycle, test components, and find the real problem.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="number">4</div>
+
+<h3>We repair</h3>
+
+<p>
+We explain everything first, repair it, then test it together with you.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.process{
+
+padding:120px 0;
+
+background:#fafafa;
+
+}
+
+.overline{
+
+color:#d97706;
+
+font-size:.8rem;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+}
+
+.process h2{
+
+font-size:48px;
+
+margin:15px 0;
+
+color:#1f2937;
+
+}
+
+.intro{
+
+color:#666;
+
+margin-bottom:60px;
+
+font-size:18px;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+position:relative;
+
+padding:40px;
+
+background:#fff;
+
+border:2px solid #ececec;
+
+border-radius:18px;
+
+overflow:hidden;
+
+transition:all .35s ease;
+
+cursor:pointer;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px) scale(1.03);
+
+border-color:#d97706;
+
+box-shadow:
+0 0 18px rgba(217,119,6,.18),
+0 20px 60px rgba(0,0,0,.10);
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:4px;
+
+background:#ececec;
+
+transition:.35s;
+
+}
+
+.card:hover::before{
+
+background:#d97706;
+
+
+}
+
+.card:hover::before{
+
+width:100%;
+
+}
+
+.number{
+
+width:70px;
+
+height:70px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#d97706;
+
+color:white;
+
+border-radius:50%;
+
+font-size:28px;
+
+font-weight:700;
+
+margin-bottom:25px;
+
+transition:.35s;
+
+}
+
+.card:hover .number{
+
+transform:scale(1.15) rotate(10deg);
+
+box-shadow:0 0 20px rgba(217,119,6,.45);
+
+}
+
+.card:hover .number{
+
+transform:rotate(360deg) scale(1.08);
+
+box-shadow:0 0 25px rgba(217,119,6,.4);
+
+}
+
+.card h3{
+
+margin-bottom:15px;
+
+font-size:24px;
+.card h3{
+
+transition:.35s;
+
+}
+
+.card:hover h3{
+
+color:#d97706;
+
+
+}
+
+.card p{
+
+color:#666;
+
+line-height:1.8;
+
+}
+
+</style>

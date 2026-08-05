@@ -1,0 +1,170 @@
+---
+const faqs = [
+  {
+    question: "Do you have a shop in Bellingham?",
+    answer:
+      "No. We are a mobile repair service with no storefront, which keeps our overhead low and our diagnostic fee smaller than it would otherwise be. Everything we need travels on the van."
+  },
+  {
+    question: "How fast can you get to my house in Bellingham?",
+    answer:
+      "Most days we can be at a city address the same day, and no-heat calls go to the front of the queue. Bellingham is our closest coverage area, so response here is faster than anywhere else we serve."
+  },
+  {
+    question: "How much does a furnace repair cost in Bellingham?",
+    answer:
+      "Most repairs land in the low hundreds. Ignition parts, sensors and capacitors are inexpensive and usually fit in a single visit. Blower motors, control boards and gas valves cost more. You get the number before we start."
+  },
+  {
+    question: "Do you work on older furnaces in Bellingham's historic neighbourhoods?",
+    answer:
+      "Yes. Older equipment in tight crawl spaces is normal work for us. We will not refuse a job because the furnace is old, and we will not recommend replacement simply because of its age."
+  },
+  {
+    question: "Are you licensed to work in Bellingham?",
+    answer:
+      "Please contact us directly if you have questions about licensing or current service availability."
+  },
+  {
+    question: "Do you repair heat pumps in Bellingham as well as furnaces?",
+    answer:
+      "Yes. We repair furnaces, heat pumps and dual-fuel systems. We diagnose both sides of the system to identify the real cause of the problem."
+  },
+  {
+    question: "My furnace works but one room is always cold. Can you help?",
+    answer:
+      "Yes. This is one of the most common calls we receive in older Bellingham homes. It is often an airflow or ductwork issue rather than a furnace failure."
+  }
+];
+---
+
+<section class="bellingham-faq">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <span class="overline">
+        FAQ
+      </span>
+
+      <h2>
+        Heating Repair in Bellingham, Common Questions
+      </h2>
+
+      <p>
+        Answers to the questions we hear most often from homeowners in Bellingham.
+      </p>
+
+    </div>
+
+    <div class="faq-grid">
+
+      {faqs.map((faq) => (
+
+        <article class="faq-card">
+
+          <h3>{faq.question}</h3>
+
+          <p>{faq.answer}</p>
+
+        </article>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.bellingham-faq{
+padding:110px 24px;
+background:#f8fafc;
+}
+
+.container{
+width:min(1200px,100%);
+margin:auto;
+}
+
+.section-header{
+text-align:center;
+max-width:760px;
+margin:0 auto 60px;
+}
+
+.overline{
+display:inline-block;
+margin-bottom:18px;
+color:#ea580c;
+font-size:.82rem;
+font-weight:800;
+letter-spacing:2px;
+}
+
+.overline::after{
+content:"";
+display:block;
+width:60px;
+height:3px;
+margin:10px auto 0;
+background:#f97316;
+border-radius:999px;
+}
+
+.section-header h2{
+font-size:clamp(2.3rem,4vw,3.6rem);
+margin-bottom:18px;
+color:#0f172a;
+}
+
+.section-header p{
+color:#64748b;
+line-height:1.8;
+}
+
+.faq-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+}
+
+.faq-card{
+background:#fff;
+padding:32px;
+border-radius:20px;
+border:1px solid #e5e7eb;
+transition:.35s;
+}
+
+.faq-card:hover{
+transform:translateY(-8px);
+border-color:#f97316;
+box-shadow:0 18px 40px rgba(15,23,42,.08);
+}
+
+.faq-card h3{
+margin:0 0 16px;
+font-size:1.25rem;
+color:#0f172a;
+line-height:1.4;
+}
+
+.faq-card p{
+margin:0;
+line-height:1.8;
+color:#64748b;
+}
+
+@media(max-width:900px){
+
+.faq-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>

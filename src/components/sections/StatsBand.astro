@@ -1,0 +1,94 @@
+<section class="stats-band">
+
+  <div class="container stats-grid">
+
+    <div class="stat">
+      <span class="icon">🛠️</span>
+      <h3>Repair Focused</h3>
+      <p>We specialize only in heating repairs.</p>
+    </div>
+
+    <div class="stat">
+      <span class="icon">📍</span>
+      <h3>Whatcom County</h3>
+      <p>Serving homeowners across the area.</p>
+    </div>
+
+    <div class="stat">
+      <span class="icon">💬</span>
+      <h3>Honest Advice</h3>
+      <p>No pressure to replace what can be repaired.</p>
+    </div>
+
+    <div class="stat">
+      <span class="icon">⚡</span>
+      <h3>Fast Response</h3>
+      <p>Same-day service whenever possible.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.stats-band{
+padding:90px 0;
+background:#f8fafc;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.stat{
+background:white;
+padding:35px;
+text-align:center;
+border-radius:18px;
+border:2px solid #ececec;
+transition:.35s;
+}
+
+.stat:hover{
+transform:translateY(-8px) scale(1.03);
+border-color:#d97706;
+box-shadow:0 20px 45px rgba(0,0,0,.08);
+}
+
+.icon{
+font-size:42px;
+display:block;
+margin-bottom:20px;
+}
+
+.stat h3{
+font-size:24px;
+margin-bottom:10px;
+color:#1f2937;
+}
+
+.stat p{
+color:#666;
+line-height:1.7;
+}
+
+@media(max-width:900px){
+
+.stats-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>

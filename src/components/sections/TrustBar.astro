@@ -1,0 +1,254 @@
+<section class="trust-bar">
+
+  <div class="container trust-grid">
+
+    <!-- Same Day -->
+    <div class="trust-item">
+
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M5 13l4 4L19 7"/>
+      </svg>
+
+      <span>Same Day Service Most Days</span>
+
+    </div>
+
+    <!-- Gas Furnace -->
+    <div class="trust-item">
+
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 3s5 5.5 5 9a5 5 0 11-10 0c0-3.5 5-9 5-9z"/>
+      </svg>
+
+      <span>Gas, Electric & Oil Furnaces</span>
+
+    </div>
+
+    <!-- Diagnostic -->
+    <div class="trust-item">
+
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 8c-2 0-3 1-3 2s1 2 3 2 3 1 3 2-1 2-3 2m0-10V5m0 14v-2"/>
+      </svg>
+
+      <span>Flat Diagnostic Fee</span>
+
+    </div>
+
+    <!-- Honest -->
+    <div class="trust-item">
+
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M9 12l2 2 4-4m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+
+      <span>Honest Repair Advice</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.trust-bar{
+
+    background:#fff;
+
+    border-top:1px solid #edf2f7;
+
+    border-bottom:1px solid #edf2f7;
+
+    padding:22px 0;
+
+}
+
+.trust-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+.trust-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    padding:18px;
+
+    background:#fff;
+
+    border-radius:14px;
+
+    transition:.35s;
+
+    cursor:default;
+
+}
+
+.trust-item:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 15px 35px rgba(15,23,42,.08);
+
+}
+
+/* ==========================
+   ICON
+========================== */
+
+.icon{
+    width:28px;
+    height:28px;
+
+    min-width:28px;
+    min-height:28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:visible;
+
+    color:#f97316;
+
+    flex-shrink:0;
+
+    animation:pulseIcon 2.5s ease-in-out infinite;
+
+    filter:drop-shadow(0 0 6px rgba(249,115,22,.25));
+
+    transition:.35s;
+}
+
+/* Delay */
+
+.trust-item:nth-child(2) .icon{
+
+animation-delay:.3s;
+
+}
+
+.trust-item:nth-child(3) .icon{
+
+animation-delay:.6s;
+
+}
+
+.trust-item:nth-child(4) .icon{
+
+animation-delay:.9s;
+
+}
+
+/* Hover */
+
+.trust-item:hover .icon{
+
+    color:#ea580c;
+
+    transform:scale(1.25);
+
+    filter:
+    drop-shadow(0 0 8px rgba(249,115,22,.60))
+    drop-shadow(0 0 22px rgba(249,115,22,.35));
+
+}
+
+/* Text */
+
+.trust-item span{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    line-height:1.4;
+
+    transition:.35s;
+
+}
+
+.trust-item:hover span{
+
+color:#ea580c;
+
+}
+
+/* Pulse */
+
+@keyframes pulseIcon{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.12);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.trust-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:640px){
+
+.trust-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.trust-item{
+
+justify-content:flex-start;
+
+}
+
+}
+
+</style>

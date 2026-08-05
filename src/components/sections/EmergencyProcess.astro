@@ -1,0 +1,359 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "You Call and Describe It",
+    description:
+      "Tell us what the system is doing, how cold the house is, and who is home. That helps us decide how quickly we need to respond."
+  },
+  {
+    number: "02",
+    title: "We Triage on the Phone",
+    description:
+      "If it is something you can safely fix in two minutes, we will tell you before we dispatch a technician."
+  },
+  {
+    number: "03",
+    title: "Arrival Time & After-Hours Fee",
+    description:
+      "You receive a realistic arrival window and the emergency call-out fee before we leave."
+  },
+  {
+    number: "04",
+    title: "Full System Diagnosis",
+    description:
+      "We inspect ignition, flame sensor, safeties, airflow and electrical components to locate the real fault."
+  },
+  {
+    number: "05",
+    title: "Restore Heat Tonight",
+    description:
+      "Where possible we restore safe heating immediately. If more work is needed we make the system safe."
+  },
+  {
+    number: "06",
+    title: "Follow-Up if Needed",
+    description:
+      "If a special part or daylight work is required, we schedule the follow-up and explain every next step."
+  }
+];
+---
+
+<section class="emergency-process">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="overline">
+        OUR PROCESS
+      </span>
+
+      <h2>
+        How an Emergency Call Works
+      </h2>
+
+      <p>
+        From your first phone call to restoring your heat, every step is
+        explained before we begin.
+      </p>
+
+    </div>
+
+    <div class="process-grid">
+
+      {
+        steps.map((step) => (
+
+          <article class="process-card">
+
+            <span class="step-number">
+              {step.number}
+            </span>
+
+            <h3>
+              {step.title}
+            </h3>
+
+            <p>
+              {step.description}
+            </p>
+
+          </article>
+
+        ))
+      }
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+<style>
+.emergency-process {
+  padding: 110px 24px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(220, 38, 38, 0.07),
+      transparent 32%
+    ),
+    #ffffff;
+}
+
+.container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.section-heading {
+  max-width: 780px;
+  margin: 0 auto 62px;
+  text-align: center;
+}
+
+.overline {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #dc2626;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+.overline::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #dc2626,
+    #f97316
+  );
+}
+
+.section-heading h2 {
+  margin: 0 0 20px;
+  color: #0f172a;
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  line-height: 1.08;
+  letter-spacing: -1.4px;
+}
+
+.section-heading p {
+  max-width: 690px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.process-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.process-grid::before {
+  content: "";
+  position: absolute;
+  top: 47px;
+  right: 8%;
+  left: 8%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(220, 38, 38, 0.15),
+    #f97316,
+    rgba(220, 38, 38, 0.15)
+  );
+  z-index: 0;
+}
+
+.process-card {
+  position: relative;
+  z-index: 1;
+  min-height: 270px;
+  padding: 78px 30px 32px;
+  overflow: hidden;
+  border: 2px solid #e7ebf0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.process-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #dc2626,
+    #f97316
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-10px);
+  border-color: #f97316;
+  box-shadow:
+    0 0 28px rgba(249, 115, 22, 0.18),
+    0 24px 58px rgba(15, 23, 42, 0.13);
+}
+
+.process-card:hover::before {
+  transform: scaleX(1);
+}
+
+.step-number {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 2px solid #fed7aa;
+  border-radius: 50%;
+  color: #dc2626;
+  background: #fff7ed;
+  font-size: 0.95rem;
+  font-weight: 900;
+  box-shadow: 0 0 0 8px #ffffff;
+  animation: processPulse 3s ease-in-out infinite;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.process-card:nth-child(2) .step-number {
+  animation-delay: 0.2s;
+}
+
+.process-card:nth-child(3) .step-number {
+  animation-delay: 0.4s;
+}
+
+.process-card:nth-child(4) .step-number {
+  animation-delay: 0.6s;
+}
+
+.process-card:nth-child(5) .step-number {
+  animation-delay: 0.8s;
+}
+
+.process-card:nth-child(6) .step-number {
+  animation-delay: 1s;
+}
+
+.process-card:hover .step-number {
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #dc2626,
+    #f97316
+  );
+  transform: scale(1.08);
+  box-shadow:
+    0 0 0 8px #ffffff,
+    0 0 22px rgba(249, 115, 22, 0.32);
+}
+
+.process-card h3 {
+  margin: 0 0 14px;
+  color: #0f172a;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  transition: color 0.35s ease;
+}
+
+.process-card:hover h3 {
+  color: #dc2626;
+}
+
+.process-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.75;
+}
+
+@keyframes processPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.055);
+  }
+}
+
+@media (max-width: 980px) {
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-grid::before {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .emergency-process {
+    padding: 82px 16px;
+  }
+
+  .section-heading {
+    margin-bottom: 44px;
+    text-align: left;
+  }
+
+  .overline::after {
+    margin-left: 0;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    min-height: auto;
+    padding: 76px 28px 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-card,
+  .process-card::before,
+  .step-number {
+    transition: none;
+  }
+
+  .step-number {
+    animation: none;
+  }
+
+  .process-card:hover,
+  .process-card:hover .step-number {
+    transform: none;
+  }
+}
+
+</style>

@@ -1,0 +1,187 @@
+<section class="about-team">
+
+  <div class="container split-grid">
+
+    <div class="team-image">
+
+      <img
+        src="https://assets.cdn.filesafe.space/yYhT9V8bWmH856u4w7q3/media/6a727516fcee90cf63c382ec.png"
+        alt="Heating technician working at an open furnace in a utility room"
+      >
+
+    </div>
+
+    <div class="team-content">
+
+      <span class="overline">
+        WHAT WE REPAIR
+      </span>
+
+      <h2>
+        What We Actually Work On
+      </h2>
+
+      <p>
+        Whatcom County has an unusual mix of heating systems for a region its
+        size. There are century-old homes in central Bellingham with ductwork
+        installed decades after the houses were built. There are newer homes in
+        Ferndale where original furnaces are now reaching the age when control
+        boards and blower motors begin to fail.
+      </p>
+
+      <p>
+        Beyond the cities, many rural properties around Everson, Lynden and
+        Custer still rely on propane, oil or electric heating because natural
+        gas is unavailable. At the same time, more homeowners are choosing heat
+        pumps as an efficient alternative.
+      </p>
+
+      <p>
+        We work on all of it. Older furnaces, heat pumps, oil systems, propane
+        equipment, and heating systems installed in tight crawl spaces are part
+        of our everyday work. Rather than recommending replacement because the
+        equipment is old, we prefer to diagnose the problem properly and repair
+        it whenever it makes financial sense.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.about-team{
+
+padding:110px 24px;
+
+background:#fff;
+
+}
+
+.container{
+
+width:min(1200px,100%);
+
+margin:auto;
+
+}
+
+.split-grid{
+
+display:grid;
+
+grid-template-columns:520px 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.team-image{
+
+overflow:hidden;
+
+border-radius:28px;
+
+box-shadow:0 25px 60px rgba(15,23,42,.14);
+
+}
+
+.team-image img{
+
+width:100%;
+
+height:650px;
+
+display:block;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.team-image:hover img{
+
+transform:scale(1.05);
+
+}
+
+.overline{
+
+display:inline-block;
+
+margin-bottom:18px;
+
+font-size:.82rem;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+color:#ea580c;
+
+}
+
+.overline::after{
+
+content:"";
+
+display:block;
+
+width:60px;
+
+height:3px;
+
+margin-top:10px;
+
+background:#f97316;
+
+border-radius:999px;
+
+}
+
+.team-content h2{
+
+margin:0 0 24px;
+
+font-size:clamp(2.3rem,4vw,3.5rem);
+
+line-height:1.2;
+
+color:#0f172a;
+
+}
+
+.team-content p{
+
+margin-bottom:24px;
+
+font-size:1.08rem;
+
+line-height:1.9;
+
+color:#64748b;
+
+}
+
+@media(max-width:991px){
+
+.split-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.team-image img{
+
+height:420px;
+
+}
+
+}
+
+</style>

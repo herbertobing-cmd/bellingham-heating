@@ -1,0 +1,259 @@
+---
+const faqs = [
+  {
+    question: "Do you provide emergency heating repair after hours?",
+    answer:
+      "Yes. We respond to urgent no-heat situations across Bellingham and Whatcom County whenever possible. Call us first and we'll explain your options before dispatching a technician."
+  },
+  {
+    question: "Can my furnace be repaired the same night?",
+    answer:
+      "Many emergency repairs are completed during the first visit because our technicians carry many common ignition, safety and electrical replacement parts."
+  },
+  {
+    question: "Should I turn my furnace off?",
+    answer:
+      "If you smell gas, notice smoke, or believe there is an electrical problem, switch the system off and call immediately. If you're unsure, we'll guide you over the phone."
+  },
+  {
+    question: "Do you repair heat pumps too?",
+    answer:
+      "Yes. We provide emergency repair for furnaces, heat pumps and ductless mini-split systems throughout Whatcom County."
+  },
+  {
+    question: "How much is an emergency visit?",
+    answer:
+      "You'll always know the emergency diagnostic charge before we leave. We believe in upfront pricing with no surprise after-hours fees."
+  },
+  {
+    question: "What areas do you cover?",
+    answer:
+      "We serve Bellingham, Ferndale, Lynden, Blaine, Everson, Nooksack and surrounding Whatcom County communities."
+  }
+];
+
+let open = 0;
+---
+
+<section class="emergency-faq">
+
+<div class="container">
+
+<div class="heading">
+
+<span>EMERGENCY FAQ</span>
+
+<h2>Questions We Hear During Emergency Calls</h2>
+
+<p>
+These are the most common questions homeowners ask when the
+heat suddenly stops working.
+</p>
+
+</div>
+
+<div class="faq-list">
+
+{
+faqs.map((faq,index)=>(
+<details class="faq" open={index===0}>
+
+<summary>
+
+{faq.question}
+
+<span>+</span>
+
+</summary>
+
+<p>{faq.answer}</p>
+
+</details>
+))
+}
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.emergency-faq{
+
+padding:110px 24px;
+
+background:#fff;
+
+}
+
+.container{
+
+width:min(1050px,100%);
+
+margin:auto;
+
+}
+
+.heading{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.heading span{
+
+display:inline-block;
+
+font-size:.82rem;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+color:#ea580c;
+
+margin-bottom:18px;
+
+}
+
+.heading h2{
+
+font-size:clamp(2.3rem,4vw,3.5rem);
+
+margin:0 0 18px;
+
+color:#0f172a;
+
+}
+
+.heading p{
+
+max-width:650px;
+
+margin:auto;
+
+color:#64748b;
+
+line-height:1.8;
+
+}
+
+.faq-list{
+
+display:grid;
+
+gap:18px;
+
+}
+
+.faq{
+
+border:2px solid #e2e8f0;
+
+border-radius:18px;
+
+overflow:hidden;
+
+transition:.35s;
+
+background:#fff;
+
+}
+
+.faq:hover{
+
+border-color:#f97316;
+
+box-shadow:
+
+0 10px 35px rgba(15,23,42,.08);
+
+}
+
+summary{
+
+cursor:pointer;
+
+padding:24px 28px;
+
+font-size:1.08rem;
+
+font-weight:700;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+list-style:none;
+
+color:#0f172a;
+
+}
+
+summary::-webkit-details-marker{
+
+display:none;
+
+}
+
+summary span{
+
+font-size:1.5rem;
+
+color:#f97316;
+
+transition:.35s;
+
+}
+
+details[open] summary span{
+
+transform:rotate(45deg);
+
+}
+
+.faq p{
+
+padding:0 28px 26px;
+
+margin:0;
+
+color:#64748b;
+
+line-height:1.9;
+
+font-size:1rem;
+
+}
+
+@media(max-width:768px){
+
+.emergency-faq{
+
+padding:80px 18px;
+
+}
+
+summary{
+
+padding:20px;
+
+font-size:1rem;
+
+}
+
+.faq p{
+
+padding:0 20px 20px;
+
+}
+
+}
+
+</style>

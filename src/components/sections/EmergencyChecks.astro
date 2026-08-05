@@ -1,0 +1,508 @@
+---
+const checks = [
+  {
+    number: "01",
+    title: "Check the Furnace Switch",
+    description:
+      "Look for a switch that resembles a normal light switch on or near the furnace. It is often located near the basement stairs and may have been turned off accidentally.",
+    icon: "switch",
+  },
+  {
+    number: "02",
+    title: "Check the Breaker",
+    description:
+      "Even a gas furnace needs electricity. Reset a tripped breaker once. If it immediately trips again, stop and call because that indicates a real electrical fault.",
+    icon: "breaker",
+  },
+  {
+    number: "03",
+    title: "Check the Thermostat",
+    description:
+      "Install fresh batteries, set the thermostat to Heat, set the fan to Auto, and make sure the target temperature is above the current room temperature.",
+    icon: "thermostat",
+  },
+  {
+    number: "04",
+    title: "Check the Furnace Door",
+    description:
+      "Make sure the cabinet panel is seated correctly. Most furnaces have a safety switch that prevents the system from running when the door is loose.",
+    icon: "door",
+  },
+];
+---
+
+<section class="emergency-checks">
+  <div class="container">
+
+    <header class="section-header">
+      <span class="overline">BEFORE YOU CALL</span>
+
+      <h2>Four Things to Check Before You Call Us</h2>
+
+      <p>
+        These checks require no tools and are safe for homeowners.
+        They solve a surprising number of no-heat calls and may save
+        you the cost of a diagnostic visit.
+      </p>
+    </header>
+
+    <div class="checks-layout">
+
+      <div class="checks-grid">
+        {
+          checks.map((check) => (
+            <article class="check-card">
+
+              <span class="check-number">
+                {check.number}
+              </span>
+
+              <div class="icon-wrap" aria-hidden="true">
+
+                {check.icon === "switch" && (
+                  <svg
+                    class="card-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect x="7" y="3" width="10" height="18" rx="2" />
+                    <path d="M12 8v8" />
+                    <circle cx="12" cy="8" r="1.5" />
+                  </svg>
+                )}
+
+                {check.icon === "breaker" && (
+                  <svg
+                    class="card-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect x="4" y="3" width="16" height="18" rx="2" />
+                    <path d="M8 7h8M8 17h8" />
+                    <path d="M12 9v6" />
+                    <circle cx="12" cy="12" r="2" />
+                  </svg>
+                )}
+
+                {check.icon === "thermostat" && (
+                  <svg
+                    class="card-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect x="4" y="5" width="16" height="14" rx="3" />
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M8 8h.01M16 8h.01" />
+                  </svg>
+                )}
+
+                {check.icon === "door" && (
+                  <svg
+                    class="card-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path d="M5 21V4a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v17" />
+                    <path d="M3 21h18" />
+                    <circle cx="14" cy="12" r="1" />
+                  </svg>
+                )}
+
+              </div>
+
+              <h3>{check.title}</h3>
+
+              <p>{check.description}</p>
+
+            </article>
+          ))
+        }
+      </div>
+
+      <aside class="callout-box">
+
+        <div class="callout-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3 2.8 20h18.4L12 3Z" />
+            <path d="M12 9v5" />
+            <path d="M12 17.5h.01" />
+          </svg>
+        </div>
+
+        <h3>Still No Heat?</h3>
+
+        <p>
+          If all four checks look correct and the furnace still will not run,
+          call us and describe what you have already checked.
+        </p>
+
+        <a href="tel:+13605550143" class="call-button">
+          Call (360) 555-0143
+        </a>
+
+        <div class="gas-warning">
+          <strong>Smell gas?</strong>
+          Leave the house immediately and call the gas utility from outside.
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.emergency-checks {
+  padding: 110px 24px;
+  background:
+    radial-gradient(
+      circle at bottom right,
+      rgba(249, 115, 22, 0.08),
+      transparent 34%
+    ),
+    #f8fafc;
+}
+
+.container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.section-header {
+  max-width: 820px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.overline {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #dc2626;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+.overline::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #dc2626,
+    #f97316
+  );
+}
+
+.section-header h2 {
+  margin: 0 0 20px;
+  color: #0f172a;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -1.4px;
+}
+
+.section-header p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.checks-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.checks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.check-card {
+  position: relative;
+  min-height: 310px;
+  padding: 34px;
+  overflow: hidden;
+  border: 2px solid #e7ebf0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.check-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #dc2626,
+    #f97316
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.check-card:hover {
+  transform: translateY(-9px);
+  border-color: #f97316;
+  box-shadow:
+    0 0 24px rgba(249, 115, 22, 0.16),
+    0 22px 52px rgba(15, 23, 42, 0.12);
+}
+
+.check-card:hover::before {
+  transform: scaleX(1);
+}
+
+.check-number {
+  position: absolute;
+  top: 22px;
+  right: 25px;
+  color: rgba(15, 23, 42, 0.07);
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.icon-wrap {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 24px;
+  place-items: center;
+  border: 1px solid #fecaca;
+  border-radius: 18px;
+  color: #dc2626;
+  background: #fef2f2;
+  animation: iconPulse 3s ease-in-out infinite;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.check-card:nth-child(2) .icon-wrap {
+  animation-delay: 0.25s;
+}
+
+.check-card:nth-child(3) .icon-wrap {
+  animation-delay: 0.5s;
+}
+
+.check-card:nth-child(4) .icon-wrap {
+  animation-delay: 0.75s;
+}
+
+.card-icon {
+  width: 34px;
+  height: 34px;
+  overflow: visible;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.35s ease;
+}
+
+.check-card:hover .icon-wrap {
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #dc2626,
+    #f97316
+  );
+  transform: translateY(-4px) scale(1.07);
+  box-shadow:
+    0 0 20px rgba(239, 68, 68, 0.3),
+    0 14px 30px rgba(249, 115, 22, 0.24);
+}
+
+.check-card:hover .card-icon {
+  transform: rotate(7deg) scale(1.08);
+}
+
+.check-card h3 {
+  margin: 0 0 14px;
+  color: #0f172a;
+  font-size: 1.35rem;
+  line-height: 1.28;
+  transition: color 0.35s ease;
+}
+
+.check-card:hover h3 {
+  color: #dc2626;
+}
+
+.check-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.75;
+}
+
+.callout-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 38px;
+  border-radius: 24px;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      145deg,
+      #0b1f3a,
+      #102f54
+    );
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.2);
+}
+
+.callout-icon {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 24px;
+  place-items: center;
+  border-radius: 18px;
+  color: #fb923c;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.callout-icon svg {
+  width: 34px;
+  height: 34px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.callout-box h3 {
+  margin: 0 0 15px;
+  font-size: 1.8rem;
+}
+
+.callout-box > p {
+  margin: 0 0 26px;
+  color: #dbe4ef;
+  line-height: 1.8;
+}
+
+.call-button {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  padding: 15px 22px;
+  border-radius: 12px;
+  color: #ffffff;
+  background: #f97316;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 15px 34px rgba(249, 115, 22, 0.28);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.call-button:hover {
+  transform: translateY(-4px);
+  background: #ea580c;
+  box-shadow: 0 20px 42px rgba(249, 115, 22, 0.38);
+}
+
+.gas-warning {
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.gas-warning strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #fca5a5;
+}
+
+@keyframes iconPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.055);
+  }
+}
+
+@media (max-width: 1000px) {
+  .checks-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .emergency-checks {
+    padding: 82px 16px;
+  }
+
+  .section-header {
+    margin-bottom: 42px;
+    text-align: left;
+  }
+
+  .overline::after {
+    margin-left: 0;
+  }
+
+  .checks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .check-card {
+    min-height: auto;
+    padding: 30px;
+  }
+
+  .callout-box {
+    padding: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .check-card,
+  .check-card::before,
+  .icon-wrap,
+  .card-icon,
+  .call-button {
+    transition: none;
+  }
+
+  .icon-wrap {
+    animation: none;
+  }
+
+  .check-card:hover,
+  .check-card:hover .icon-wrap,
+  .call-button:hover {
+    transform: none;
+  }
+}
+</style>

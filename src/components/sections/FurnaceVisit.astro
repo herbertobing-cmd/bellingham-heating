@@ -1,0 +1,497 @@
+---
+const visitItems = [
+  {
+    title: "A Real Diagnosis, Not a Guess",
+    description:
+      "We test the ignition sequence, flame signal, gas pressure where relevant, airflow across the heat exchanger, and the electrical side in the proper order.",
+    icon: "diagnosis",
+  },
+  {
+    title: "The Price Before the Work",
+    description:
+      "You receive the repair cost before we begin. If we find another problem, we stop and discuss it with you first.",
+    icon: "price",
+  },
+  {
+    title: "Common Parts on the Van",
+    description:
+      "Flame sensors, igniters, capacitors, limit switches, pressure switches and other common parts travel with us.",
+    icon: "parts",
+  },
+  {
+    title: "Most Repairs in One Visit",
+    description:
+      "Most furnace repairs finish during the first appointment. If a part must be ordered, we explain the timeline clearly.",
+    icon: "clock",
+  },
+  {
+    title: "A Written Summary",
+    description:
+      "You receive a written explanation of what failed, what we repaired, what to watch, and our honest opinion of the system.",
+    icon: "report",
+  },
+  {
+    title: "Honest Repair Advice",
+    description:
+      "If the furnace is not worth repairing, we tell you plainly. We do not sell new systems, so there is no sales agenda.",
+    icon: "shield",
+  },
+];
+---
+
+<section class="furnace-visit">
+  <div class="container">
+
+    <header class="section-header">
+      <span class="overline">WHAT YOUR VISIT INCLUDES</span>
+
+      <h2>What You Get When We Come Out</h2>
+
+      <p>
+        A furnace repair visit should leave you with working heat, a clear
+        explanation, and no surprises about the price.
+      </p>
+    </header>
+
+    <div class="visit-layout">
+
+      <div class="visit-grid">
+        {
+          visitItems.map((item) => (
+            <article class="visit-card">
+
+              <div class="icon-wrap" aria-hidden="true">
+
+                {item.icon === "diagnosis" && (
+                  <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                    <circle cx="11" cy="11" r="7" />
+                    <path d="m16 16 5 5" />
+                    <path d="M8 11h6M11 8v6" />
+                  </svg>
+                )}
+
+                {item.icon === "price" && (
+                  <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3v18" />
+                    <path d="M16 7.5c0-1.4-1.8-2.5-4-2.5S8 6.1 8 7.5s1.8 2.5 4 2.5 4 1.1 4 2.5-1.8 2.5-4 2.5-4-1.1-4-2.5" />
+                  </svg>
+                )}
+
+                {item.icon === "parts" && (
+                  <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M14.7 6.3a4 4 0 0 0-5-5L7.4 3.6l3 3L8 9l-3-3-2.3 2.3a4 4 0 0 0 5 5L16 21.6a2 2 0 0 0 2.8-2.8l-8.3-8.3" />
+                  </svg>
+                )}
+
+                {item.icon === "clock" && (
+                  <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                )}
+
+                {item.icon === "report" && (
+                  <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 3h9l4 4v14H6V3Z" />
+                    <path d="M15 3v5h4" />
+                    <path d="M9 12h6M9 16h6" />
+                  </svg>
+                )}
+
+                {item.icon === "shield" && (
+                  <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z" />
+                    <path d="m8.5 12 2.3 2.3 4.7-5" />
+                  </svg>
+                )}
+
+              </div>
+
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="visit-image-wrap">
+
+        <img
+          src="https://assets.cdn.filesafe.space/yYhT9V8bWmH856u4w7q3/media/6a727516fcee90cf63c382ec.png"
+          alt="Technician inspecting and repairing a residential furnace"
+        />
+
+        <div class="image-overlay"></div>
+
+        <div class="floating-badge">
+          <svg class="badge-icon" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+          </svg>
+
+          <div>
+            <strong>Most Repairs</strong>
+            <span>Finished on the first visit</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.furnace-visit {
+  padding: 110px 24px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(249, 115, 22, 0.08),
+      transparent 32%
+    ),
+    #f8fafc;
+}
+
+.container {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.section-header {
+  max-width: 790px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.overline {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #ea580c;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+.overline::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: #f97316;
+}
+
+.section-header h2 {
+  margin: 0 0 20px;
+  color: #0f172a;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -1.4px;
+}
+
+.section-header p {
+  max-width: 690px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.visit-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+  gap: 38px;
+  align-items: stretch;
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.visit-card {
+  position: relative;
+  min-height: 255px;
+  padding: 30px;
+  overflow: hidden;
+  border: 2px solid #e7ebf0;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.visit-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.visit-card:hover {
+  transform: translateY(-9px);
+  border-color: #f97316;
+  box-shadow:
+    0 0 24px rgba(249, 115, 22, 0.16),
+    0 22px 52px rgba(15, 23, 42, 0.12);
+}
+
+.visit-card:hover::before {
+  transform: scaleX(1);
+}
+
+.icon-wrap {
+  display: grid;
+  width: 66px;
+  height: 66px;
+  margin-bottom: 23px;
+  place-items: center;
+  border: 1px solid #fed7aa;
+  border-radius: 18px;
+  color: #ea580c;
+  background: #fff7ed;
+  animation: iconPulse 3s ease-in-out infinite;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.visit-card:nth-child(2) .icon-wrap {
+  animation-delay: 0.25s;
+}
+
+.visit-card:nth-child(3) .icon-wrap {
+  animation-delay: 0.5s;
+}
+
+.visit-card:nth-child(4) .icon-wrap {
+  animation-delay: 0.75s;
+}
+
+.visit-card:nth-child(5) .icon-wrap {
+  animation-delay: 1s;
+}
+
+.visit-card:nth-child(6) .icon-wrap {
+  animation-delay: 1.25s;
+}
+
+.card-icon {
+  width: 32px;
+  height: 32px;
+  overflow: visible;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.35s ease;
+}
+
+.visit-card:hover .icon-wrap {
+  color: #ffffff;
+  background: #f97316;
+  transform: translateY(-4px) scale(1.07);
+  box-shadow:
+    0 0 20px rgba(249, 115, 22, 0.35),
+    0 14px 30px rgba(249, 115, 22, 0.24);
+}
+
+.visit-card:hover .card-icon {
+  transform: rotate(7deg) scale(1.08);
+}
+
+.visit-card h3 {
+  margin: 0 0 13px;
+  color: #0f172a;
+  font-size: 1.28rem;
+  line-height: 1.3;
+  transition: color 0.35s ease;
+}
+
+.visit-card:hover h3 {
+  color: #ea580c;
+}
+
+.visit-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.visit-image-wrap {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #0f172a;
+  box-shadow: 0 24px 65px rgba(15, 23, 42, 0.18);
+}
+
+.visit-image-wrap img {
+  width: 100%;
+  height: 100%;
+  min-height: 570px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+.visit-image-wrap:hover img {
+  transform: scale(1.045);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 45%,
+      rgba(15, 23, 42, 0.72) 100%
+    );
+  pointer-events: none;
+}
+
+.floating-badge {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 19px 21px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 17px;
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.22);
+  animation: badgeFloat 3.2s ease-in-out infinite;
+}
+
+.badge-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  color: #fb923c;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.floating-badge strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 1.05rem;
+}
+
+.floating-badge span {
+  color: #dbe4ef;
+  font-size: 0.9rem;
+}
+
+@keyframes iconPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.055);
+  }
+}
+
+@keyframes badgeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (max-width: 1050px) {
+  .visit-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-image-wrap img {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 700px) {
+  .furnace-visit {
+    padding: 82px 16px;
+  }
+
+  .section-header {
+    margin-bottom: 42px;
+    text-align: left;
+  }
+
+  .overline::after {
+    margin-left: 0;
+  }
+
+  .visit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-card {
+    min-height: auto;
+    padding: 27px;
+  }
+
+  .visit-image-wrap img {
+    min-height: 360px;
+  }
+
+  .floating-badge {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visit-card,
+  .visit-card::before,
+  .icon-wrap,
+  .card-icon,
+  .visit-image-wrap img {
+    transition: none;
+  }
+
+  .icon-wrap,
+  .floating-badge {
+    animation: none;
+  }
+
+  .visit-card:hover,
+  .visit-card:hover .icon-wrap,
+  .visit-image-wrap:hover img {
+    transform: none;
+  }
+}
+</style>

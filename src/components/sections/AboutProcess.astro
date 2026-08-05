@@ -1,0 +1,277 @@
+<section class="about-process">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <span class="overline">
+        HOW WE WORK
+      </span>
+
+      <h2>
+        The Same Five Things, Every Job
+      </h2>
+
+      <p>
+        Every service call follows the same straightforward process. No guesswork,
+        no pressure, and no surprises.
+      </p>
+
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-card">
+
+        <div class="number">01</div>
+
+        <h3>Flat Diagnostic Fee</h3>
+
+        <p>
+          We quote the diagnostic fee before we drive out, and if you approve
+          the repair, that fee is credited toward the work.
+        </p>
+
+      </div>
+
+      <div class="process-card">
+
+        <div class="number">02</div>
+
+        <h3>Real Diagnosis</h3>
+
+        <p>
+          We test the heating system in a logical order instead of replacing
+          parts until something finally works.
+        </p>
+
+      </div>
+
+      <div class="process-card">
+
+        <div class="number">03</div>
+
+        <h3>Repair Price First</h3>
+
+        <p>
+          You receive the repair price before any work begins. If another issue
+          appears, we stop and discuss it with you first.
+        </p>
+
+      </div>
+
+      <div class="process-card">
+
+        <div class="number">04</div>
+
+        <h3>Common Parts On The Van</h3>
+
+        <p>
+          We carry many commonly needed parts so most heating repairs can be
+          completed during the first visit.
+        </p>
+
+      </div>
+
+      <div class="process-card">
+
+        <div class="number">05</div>
+
+        <h3>Written Summary</h3>
+
+        <p>
+          Before we leave, you'll receive a clear explanation of the repair,
+          along with our honest opinion about the remaining life of your system.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.about-process{
+
+padding:110px 24px;
+
+background:#f8fafc;
+
+}
+
+.container{
+
+width:min(1200px,100%);
+
+margin:auto;
+
+}
+
+.section-header{
+
+max-width:760px;
+
+margin:0 auto 70px;
+
+text-align:center;
+
+}
+
+.overline{
+
+display:inline-block;
+
+margin-bottom:18px;
+
+font-size:.82rem;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+color:#ea580c;
+
+}
+
+.overline::after{
+
+content:"";
+
+display:block;
+
+width:60px;
+
+height:3px;
+
+margin:10px auto 0;
+
+background:#f97316;
+
+border-radius:999px;
+
+}
+
+.section-header h2{
+
+margin:0 0 20px;
+
+font-size:clamp(2.3rem,4vw,3.5rem);
+
+color:#0f172a;
+
+}
+
+.section-header p{
+
+color:#64748b;
+
+line-height:1.8;
+
+}
+
+.process-grid{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:24px;
+
+}
+
+.process-card{
+
+background:#fff;
+
+padding:34px 26px;
+
+border-radius:22px;
+
+border:1px solid #e5e7eb;
+
+transition:.35s;
+
+box-shadow:0 12px 35px rgba(15,23,42,.05);
+
+}
+
+.process-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#f97316;
+
+box-shadow:0 25px 55px rgba(15,23,42,.10);
+
+}
+
+.number{
+
+width:56px;
+
+height:56px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:#fff7ed;
+
+color:#ea580c;
+
+font-size:1.2rem;
+
+font-weight:800;
+
+margin-bottom:24px;
+
+}
+
+.process-card h3{
+
+margin:0 0 16px;
+
+font-size:1.2rem;
+
+color:#0f172a;
+
+}
+
+.process-card p{
+
+margin:0;
+
+color:#64748b;
+
+line-height:1.8;
+
+}
+
+@media(max-width:1100px){
+
+.process-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.process-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

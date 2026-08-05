@@ -1,0 +1,186 @@
+<section class="lead-band">
+
+    <div class="container lead-grid">
+
+        <div>
+
+            <span class="overline">
+                No heat right now?
+            </span>
+
+            <h2>
+                Tell us what it is doing and we will tell you what it means
+            </h2>
+
+            <p>
+                Describe the symptoms, even if you are not sure how to explain
+                them. Clicking and no start, running but blowing cold,
+                starting then quitting after a few minutes—each of those
+                points somewhere different.
+            </p>
+
+        </div>
+
+        <div class="lead-card">
+
+            <h3>Request a Visit</h3>
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                />
+
+                <input
+                    type="tel"
+                    placeholder="Phone Number"
+                />
+
+                <button>
+                    Request a Visit
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.lead-band{
+
+padding:90px 0;
+
+background:#fafafa;
+
+}
+
+.lead-grid{
+
+display:grid;
+
+grid-template-columns:1.4fr .8fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.overline{
+
+font-size:.8rem;
+
+letter-spacing:2px;
+
+font-weight:700;
+
+color:#d97706;
+
+text-transform:uppercase;
+
+}
+
+h2{
+
+font-size:42px;
+
+margin:15px 0 20px;
+
+color:#1f2937;
+
+}
+
+.lead-band p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+.lead-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:16px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+
+}
+
+.lead-card h3{
+
+margin-bottom:25px;
+
+}
+
+form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+input{
+
+padding:15px;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+font-size:16px;
+
+}
+
+button{
+
+background:#d97706;
+
+color:white;
+
+border:none;
+
+padding:16px;
+
+border-radius:8px;
+
+font-size:16px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#b95f05;
+
+}
+
+@media(max-width:900px){
+
+.lead-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

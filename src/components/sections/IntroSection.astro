@@ -1,0 +1,139 @@
+<section class="intro-section">
+  <div class="container intro-grid">
+
+    <div class="image-wrap">
+
+      <img
+        src="/images/home-intro.webp"
+        alt="Technician testing a furnace control board with a multimeter"
+      />
+
+    </div>
+
+    <div>
+
+      <span class="overline">
+        REPAIR ONLY
+      </span>
+
+      <h2>
+        We Do Not Sell Furnaces,<br>
+        Which Is the Whole Point
+      </h2>
+
+      <p>
+        There is a conflict of interest built into most heating companies.
+        The same person who tells you whether your furnace is worth repairing
+        also earns considerably more if the answer is no.
+      </p>
+
+      <p>
+        We took the conflict out. We repair heating systems only.
+        If your twenty year old furnace only needs a flame sensor,
+        that is exactly what we will tell you.
+      </p>
+
+      <p>
+        Honest advice. Honest repairs. No sales pressure.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+.intro-section{
+    padding:120px 0;
+    background:white;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.image-wrap{
+    overflow:hidden;
+    border-radius:20px;
+    transition:.4s;
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+}
+
+.image-wrap:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 0 30px rgba(217,119,6,.25),
+    0 30px 70px rgba(0,0,0,.18);
+
+}
+
+.image-wrap img{
+
+    width:100%;
+    display:block;
+    transition:.6s;
+
+}
+
+.image-wrap:hover img{
+
+    transform:scale(1.06);
+
+}
+
+.overline{
+
+    color:#d97706;
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:.8rem;
+
+}
+
+.intro-section h2{
+
+    font-size:48px;
+    margin:18px 0 25px;
+    color:#1f2937;
+    line-height:1.2;
+
+}
+
+.intro-section p{
+
+    color:#666;
+    line-height:1.9;
+    margin-bottom:20px;
+    font-size:18px;
+
+}
+
+@media(max-width:900px){
+
+.intro-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.intro-section{
+
+padding:80px 0;
+
+}
+
+.intro-section h2{
+
+font-size:36px;
+
+}
+
+}
+
+</style>

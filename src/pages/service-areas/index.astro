@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import ServiceAreasHero from "../../components/sections/ServiceAreasHero.astro";
+import TrustBar from "../../components/sections/TrustBar.astro";
+import ServiceAreasIntro from "../../components/sections/ServiceAreasIntro.astro";
+import ServiceAreasGrid from "../../components/sections/ServiceAreasGrid.astro";
+import WhyLocalMatters from "../../components/sections/WhyLocalMatters.astro";
+import ServiceAreasCTA from "../../components/sections/ServiceAreasCTA.astro";
+import ClosingLeadForm from "../../components/sections/ClosingLeadForm.astro";
+---
+
+<BaseLayout
+  title="Service Areas | Heating Repair in Whatcom County WA"
+  description="We repair furnaces and heat pumps in Bellingham, Ferndale, Lynden, Blaine and Everson."
+>
+
+  <ServiceAreasHero />
+
+  <TrustBar />
+
+  <ServiceAreasIntro />
+
+  <ServiceAreasGrid />
+
+<WhyLocalMatters />
+
+
+<ServiceAreasCTA />
+
+<ClosingLeadForm />
+
+</BaseLayout>

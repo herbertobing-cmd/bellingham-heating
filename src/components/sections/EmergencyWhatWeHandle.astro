@@ -1,0 +1,345 @@
+---
+const emergencyCalls = [
+  {
+    title: "No Heat at All",
+    description:
+      "The system will not run, or it runs and produces nothing. This is the call we prioritise above everything else, especially during a cold snap or when the household includes someone vulnerable.",
+    icon: "thermometer",
+  },
+  {
+    title: "The Furnace Is Doing Something Alarming",
+    description:
+      "Banging on startup, a burning smell that does not fade after the first run of the season, visible soot, or a furnace that trips its breaker repeatedly. We would rather look at these tonight than tomorrow.",
+    icon: "warning",
+  },
+  {
+    title: "Heat Pump Failure in Cold Weather",
+    description:
+      "A heat pump that has iced over and stopped, or a dual fuel system where neither half is producing heat. During an outflow event these move up the list, because a heat pump losing capacity in genuinely cold weather is exactly when the house needs it most.",
+    icon: "snowflake",
+  },
+];
+---
+
+<section class="emergency-handle">
+  <div class="container">
+
+    <header class="section-header">
+      <span class="overline">WHAT WE HANDLE</span>
+
+      <h2>The Calls We Take After Hours</h2>
+
+      <p>
+        Some heating problems can wait until morning. These are the situations
+        we prioritise when the house is getting cold and the system cannot keep up.
+      </p>
+    </header>
+
+    <div class="cards-grid">
+      {
+        emergencyCalls.map((item) => (
+          <article class="emergency-card">
+
+            <div class="icon-wrap" aria-hidden="true">
+
+              {item.icon === "thermometer" && (
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M10 14.5V5a2 2 0 0 1 4 0v9.5a5 5 0 1 1-4 0Z" />
+                  <path d="M12 17v-5" />
+                </svg>
+              )}
+
+              {item.icon === "warning" && (
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3 2.8 20h18.4L12 3Z" />
+                  <path d="M12 9v5" />
+                  <path d="M12 17.5h.01" />
+                </svg>
+              )}
+
+              {item.icon === "snowflake" && (
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2v20" />
+                  <path d="M4.2 6.5l15.6 11" />
+                  <path d="M19.8 6.5l-15.6 11" />
+                  <path d="m9.5 4.5 2.5 2.5 2.5-2.5" />
+                  <path d="m9.5 19.5 2.5-2.5 2.5 2.5" />
+                </svg>
+              )}
+
+            </div>
+
+            <h3>{item.title}</h3>
+
+            <p>{item.description}</p>
+
+            <div class="card-accent"></div>
+
+          </article>
+        ))
+      }
+    </div>
+
+  </div>
+</section>
+
+<style>
+.emergency-handle {
+  padding: 110px 24px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(220, 38, 38, 0.08),
+      transparent 34%
+    ),
+    #f8fafc;
+}
+
+.container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.section-header {
+  max-width: 790px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.overline {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #dc2626;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+.overline::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #dc2626,
+    #f97316
+  );
+}
+
+.section-header h2 {
+  margin: 0 0 20px;
+  color: #0f172a;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -1.4px;
+}
+
+.section-header p {
+  max-width: 690px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.emergency-card {
+  position: relative;
+  min-height: 330px;
+  padding: 36px;
+  overflow: hidden;
+  border: 2px solid #e7ebf0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.emergency-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #dc2626,
+    #f97316
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.emergency-card:hover {
+  transform: translateY(-10px);
+  border-color: #f97316;
+  box-shadow:
+    0 0 26px rgba(249, 115, 22, 0.17),
+    0 24px 55px rgba(15, 23, 42, 0.13);
+}
+
+.emergency-card:hover::before {
+  transform: scaleX(1);
+}
+
+.icon-wrap {
+  display: grid;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 26px;
+  place-items: center;
+  border: 1px solid #fecaca;
+  border-radius: 18px;
+  color: #dc2626;
+  background: #fef2f2;
+  animation: emergencyPulse 3s ease-in-out infinite;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.emergency-card:nth-child(2) .icon-wrap {
+  animation-delay: 0.3s;
+}
+
+.emergency-card:nth-child(3) .icon-wrap {
+  animation-delay: 0.6s;
+}
+
+.card-icon {
+  width: 35px;
+  height: 35px;
+  overflow: visible;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.35s ease;
+}
+
+.emergency-card:hover .icon-wrap {
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #dc2626,
+    #f97316
+  );
+  transform: translateY(-4px) scale(1.07);
+  box-shadow:
+    0 0 22px rgba(239, 68, 68, 0.3),
+    0 14px 32px rgba(249, 115, 22, 0.22);
+}
+
+.emergency-card:hover .card-icon {
+  transform: rotate(6deg) scale(1.08);
+}
+
+.emergency-card h3 {
+  margin: 0 0 15px;
+  color: #0f172a;
+  font-size: 1.4rem;
+  line-height: 1.28;
+  transition: color 0.35s ease;
+}
+
+.emergency-card:hover h3 {
+  color: #dc2626;
+}
+
+.emergency-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.card-accent {
+  position: absolute;
+  right: -45px;
+  bottom: -45px;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.06);
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+.emergency-card:hover .card-accent {
+  transform: scale(1.25);
+  background: rgba(249, 115, 22, 0.11);
+}
+
+@keyframes emergencyPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.055);
+  }
+}
+
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .emergency-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .emergency-handle {
+    padding: 82px 16px;
+  }
+
+  .section-header {
+    margin-bottom: 42px;
+    text-align: left;
+  }
+
+  .overline::after {
+    margin-left: 0;
+  }
+
+  .emergency-card {
+    padding: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emergency-card,
+  .emergency-card::before,
+  .icon-wrap,
+  .card-icon,
+  .card-accent {
+    transition: none;
+  }
+
+  .icon-wrap {
+    animation: none;
+  }
+
+  .emergency-card:hover,
+  .emergency-card:hover .icon-wrap {
+    transform: none;
+  }
+}
+</style>

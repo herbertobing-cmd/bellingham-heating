@@ -1,0 +1,213 @@
+---
+import { site } from "../../data/site";
+
+interface Props {
+  overline: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const {
+  overline,
+  title,
+  description,
+  image,
+} = Astro.props;
+---
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+
+  <span class="overline">{overline}</span>
+
+    <h1>{title}</h1>
+
+     <p class="lead">
+  {description}
+</p>
+
+      <div class="hero-buttons">
+
+        <a href={site.phoneHref} class="btn btn-primary">
+          Call {site.phone}
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          Request a Visit
+        </a>
+
+      </div>
+
+      <p class="trust-line">
+        Same day service most days • Flat diagnostic fee • Quoted before we drive out.
+      </p>
+
+    </div>
+
+    <div class="hero-image">
+
+     <img
+  src={image}
+  alt={title}
+/>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+.hero{
+
+padding:90px 0;
+
+background:#fff;
+
+}
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:1.1fr .9fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.overline{
+
+display:inline-block;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+font-size:.8rem;
+
+color:#d97706;
+
+margin-bottom:18px;
+
+}
+
+h1{
+
+font-size:64px;
+
+line-height:1.05;
+
+margin-bottom:28px;
+
+color:#1f2937;
+
+max-width:650px;
+
+}
+
+.lead{
+
+font-size:20px;
+
+line-height:1.8;
+
+max-width:650px;
+
+color:#555;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+margin:40px 0 30px;
+
+}
+
+.btn{
+
+padding:18px 32px;
+
+border-radius:10px;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.btn-primary{
+
+background:#d97706;
+
+color:#fff;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+.btn-outline{
+
+border:2px solid #d97706;
+
+color:#d97706;
+
+}
+
+.btn-outline:hover{
+
+background:#d97706;
+
+color:white;
+
+}
+
+.trust-line{
+
+color:#666;
+
+font-size:15px;
+
+}
+
+.hero-image img{
+
+width:100%;
+
+border-radius:18px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.15);
+
+}
+
+@media(max-width:900px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+}
+
+h1{
+
+font-size:46px;
+
+}
+
+}
+
+</style>

@@ -1,0 +1,398 @@
+---
+const areas = [
+  {
+    title: "Bellingham",
+    image: "/images/area-card-bellingham.webp",
+    href: "/service-areas/bellingham/",
+    badge: "Full Area Guide",
+    description:
+      "Our home base and closest coverage. Older housing stock, retrofitted ductwork, tight crawl spaces, and the fastest response times we offer."
+  },
+  {
+    title: "Ferndale",
+    image: "/images/area-card-ferndale.webp",
+    href: "/service-areas/ferndale/",
+    badge: "Full Area Guide",
+    description:
+      "Newer subdivisions alongside older properties out toward the river. A short run north for us and a regular part of the week."
+  },
+  {
+    title: "Lynden",
+    image: "/images/area-card-lynden.webp",
+    href: "/contact",
+    badge: "Service Available",
+    description:
+      "Farm country on the Canadian border. Larger properties, longer duct runs, and more electric and propane heat than you find in the city."
+  },
+  {
+    title: "Blaine",
+    image: "/images/area-card-blaine.webp",
+    href: "/contact",
+    badge: "Service Available",
+    description:
+      "Coastal, exposed and damp. Salt air is hard on outdoor equipment, which shows up in heat pump work more than furnace work."
+  },
+  {
+    title: "Everson",
+    image: "/images/area-card-everson.webp",
+    href: "/contact",
+    badge: "Service Available",
+    description:
+      "Up the Nooksack Valley. Rural properties, older equipment, and the first part of the county to feel a cold snap."
+  }
+];
+---
+
+<section class="areas-grid">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="overline">SERVICE AREAS</span>
+
+      <h2>
+        Cities We
+        <span>Serve</span>
+      </h2>
+
+      <p>
+        We provide furnace and heat pump repair throughout Whatcom County.
+        Select your area below to learn more.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      {
+        areas.map(area => (
+
+          <a href={area.href} class="card">
+
+            <div class="image">
+
+              <img
+                src={area.image}
+                alt={area.title}
+              >
+
+              <span class="badge">
+                {area.badge}
+              </span>
+
+            </div>
+
+            <div class="content">
+
+              <h3>{area.title}</h3>
+
+              <p>{area.description}</p>
+
+              <span class="link">
+
+                View Area
+
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M5 12h14M13 5l7 7-7 7"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+              </span>
+
+            </div>
+
+          </a>
+
+        ))
+      }
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+.areas-grid{
+
+padding:110px 24px;
+
+background:#f8fafc;
+
+}
+
+.container{
+
+width:min(1180px,100%);
+
+margin:auto;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:55px;
+
+}
+
+.overline{
+
+display:inline-block;
+
+font-size:.8rem;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+color:#f97316;
+
+margin-bottom:18px;
+
+}
+
+.overline::after{
+
+content:"";
+
+display:block;
+
+width:70px;
+
+height:3px;
+
+margin:10px auto 0;
+
+background:#f97316;
+
+border-radius:999px;
+
+}
+
+.section-title h2{
+
+font-size:clamp(2.4rem,4vw,3.8rem);
+
+margin-bottom:18px;
+
+color:#0f172a;
+
+}
+
+.section-title span:last-child{
+
+display:block;
+
+}
+
+.section-title p{
+
+max-width:720px;
+
+margin:auto;
+
+line-height:1.9;
+
+color:#64748b;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:28px;
+
+}
+
+.card{
+
+display:flex;
+
+flex-direction:column;
+
+overflow:hidden;
+
+background:#fff;
+
+border-radius:22px;
+
+border:2px solid #edf2f7;
+
+text-decoration:none;
+
+transition:.35s;
+
+box-shadow:0 10px 35px rgba(15,23,42,.05);
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+border-color:#f97316;
+
+box-shadow:
+0 0 25px rgba(249,115,22,.16),
+0 25px 50px rgba(15,23,42,.10);
+
+}
+
+.image{
+
+position:relative;
+
+overflow:hidden;
+
+height:230px;
+
+}
+
+.image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.6s;
+
+}
+
+.card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.badge{
+
+position:absolute;
+
+top:18px;
+
+left:18px;
+
+padding:8px 14px;
+
+background:#fff;
+
+border-radius:999px;
+
+font-size:.75rem;
+
+font-weight:700;
+
+color:#f97316;
+
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+}
+
+.content{
+
+padding:28px;
+
+display:flex;
+
+flex-direction:column;
+
+flex:1;
+
+}
+
+.content h3{
+
+margin-bottom:15px;
+
+font-size:1.5rem;
+
+color:#0f172a;
+
+transition:.3s;
+
+}
+
+.card:hover h3{
+
+color:#f97316;
+
+}
+
+.content p{
+
+color:#64748b;
+
+line-height:1.8;
+
+margin-bottom:auto;
+
+}
+
+.link{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-top:24px;
+
+font-weight:700;
+
+color:#f97316;
+
+}
+
+.link svg{
+
+width:20px;
+
+transition:.35s;
+
+}
+
+.card:hover .link svg{
+
+transform:translateX(8px);
+
+}
+
+@media(max-width:991px){
+
+.grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.areas-grid{
+
+padding:80px 16px;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

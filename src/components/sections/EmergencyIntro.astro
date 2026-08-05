@@ -1,0 +1,335 @@
+---
+---
+
+<section class="emergency-intro">
+
+    <div class="container intro-grid">
+
+        <div class="intro-content">
+
+            <span class="overline">
+                EMERGENCY HEATING
+            </span>
+
+            <h2>
+                What Counts as an Emergency,
+                <span>and What Can Wait Until Morning</span>
+            </h2>
+
+            <p>
+                Not every heating failure is an emergency, and treating every
+                call the same usually costs homeowners money they never needed
+                to spend.
+            </p>
+
+            <p>
+                If the house is getting colder, there are elderly people,
+                young children, someone unwell, or there is a risk of frozen
+                pipes, call immediately. Otherwise, we will honestly tell you
+                if the repair can safely wait until the next working day.
+            </p>
+
+            <div class="priority-box">
+
+                <h3>Call Immediately If:</h3>
+
+                <ul>
+
+                    <li>
+                        House temperature keeps dropping
+                    </li>
+
+                    <li>
+                        Elderly people or young children are home
+                    </li>
+
+                    <li>
+                        Pipes could freeze overnight
+                    </li>
+
+                    <li>
+                        Your heating system has completely stopped
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="intro-image">
+
+            <img
+                src="/images/svc-emergency-detail.webp"
+                alt="Cold home waiting for emergency heating repair"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.emergency-intro{
+
+padding:110px 24px;
+
+background:#fff;
+
+}
+
+.container{
+
+width:min(1200px,100%);
+
+margin:auto;
+
+}
+
+.intro-grid{
+
+display:grid;
+
+grid-template-columns:1fr 520px;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.overline{
+
+display:inline-block;
+
+margin-bottom:18px;
+
+color:#ea580c;
+
+font-size:.8rem;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+}
+
+.overline::after{
+
+content:"";
+
+display:block;
+
+width:64px;
+
+height:3px;
+
+background:#f97316;
+
+margin-top:10px;
+
+border-radius:999px;
+
+}
+
+.intro-content h2{
+
+font-size:clamp(2.3rem,4vw,3.5rem);
+
+line-height:1.1;
+
+margin:0 0 24px;
+
+color:#0f172a;
+
+letter-spacing:-1px;
+
+}
+
+.intro-content h2 span{
+
+display:block;
+
+}
+
+.intro-content p{
+
+font-size:1.08rem;
+
+line-height:1.9;
+
+color:#64748b;
+
+margin-bottom:22px;
+
+}
+
+.priority-box{
+
+margin-top:34px;
+
+padding:28px;
+
+border-radius:18px;
+
+border:2px solid #fde68a;
+
+background:#fffbeb;
+
+transition:.35s;
+
+}
+
+.priority-box:hover{
+
+transform:translateY(-6px);
+
+border-color:#f97316;
+
+box-shadow:
+
+0 0 24px rgba(249,115,22,.15),
+
+0 20px 45px rgba(15,23,42,.10);
+
+}
+
+.priority-box h3{
+
+margin:0 0 18px;
+
+color:#0f172a;
+
+font-size:1.25rem;
+
+}
+
+.priority-box ul{
+
+margin:0;
+
+padding:0;
+
+list-style:none;
+
+display:grid;
+
+gap:14px;
+
+}
+
+.priority-box li{
+
+position:relative;
+
+padding-left:34px;
+
+color:#334155;
+
+line-height:1.6;
+
+font-weight:600;
+
+}
+
+.priority-box li::before{
+
+content:"✓";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:22px;
+
+height:22px;
+
+display:grid;
+
+place-items:center;
+
+border-radius:50%;
+
+background:#f97316;
+
+color:#fff;
+
+font-size:.8rem;
+
+font-weight:800;
+
+box-shadow:0 0 12px rgba(249,115,22,.35);
+
+animation:pulseCheck 2.8s infinite;
+
+}
+
+.intro-image{
+
+overflow:hidden;
+
+border-radius:24px;
+
+box-shadow:
+
+0 24px 60px rgba(15,23,42,.16);
+
+}
+
+.intro-image img{
+
+width:100%;
+
+display:block;
+
+height:640px;
+
+object-fit:cover;
+
+transition:.6s;
+
+}
+
+.intro-image:hover img{
+
+transform:scale(1.05);
+
+}
+
+@keyframes pulseCheck{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.12);
+
+}
+
+}
+
+@media(max-width:991px){
+
+.intro-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.intro-image img{
+
+height:420px;
+
+}
+
+}
+
+</style>

@@ -1,0 +1,311 @@
+---
+const emergencies = [
+  {
+    title: "No Heat at All",
+    description:
+      "The system will not run, or it runs and produces no heat. We prioritise these calls, especially during cold weather or when someone vulnerable is in the home.",
+    icon: "thermometer",
+  },
+  {
+    title: "The Furnace Is Doing Something Alarming",
+    description:
+      "Banging on startup, a burning smell that does not fade, visible soot, or a furnace that repeatedly trips the breaker should be checked as soon as possible.",
+    icon: "warning",
+  },
+  {
+    title: "Heat Pump Failure in Cold Weather",
+    description:
+      "An iced-over heat pump, a dual-fuel system with no working heat, or a unit losing capacity during a cold snap moves to the front of the list.",
+    icon: "snowflake",
+  },
+];
+---
+
+<section class="emergency-problems">
+  <div class="container">
+
+    <header class="section-header">
+      <span class="overline">WHAT WE HANDLE</span>
+
+      <h2>The Calls We Take After Hours</h2>
+
+      <p>
+        These are the heating problems that usually cannot wait until the
+        next working day.
+      </p>
+    </header>
+
+    <div class="problems-grid">
+      {
+        emergencies.map((item) => (
+          <article class="problem-card">
+
+            <div class="icon-wrap" aria-hidden="true">
+
+              {item.icon === "thermometer" && (
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M10 14.5V5a2 2 0 0 1 4 0v9.5a5 5 0 1 1-4 0Z" />
+                  <path d="M12 17v-4" />
+                </svg>
+              )}
+
+              {item.icon === "warning" && (
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3 2.8 20h18.4L12 3Z" />
+                  <path d="M12 9v5" />
+                  <path d="M12 17.5h.01" />
+                </svg>
+              )}
+
+              {item.icon === "snowflake" && (
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2v20M4.2 6.5l15.6 11M19.8 6.5l-15.6 11" />
+                  <path d="m9.5 4.5 2.5 2.5 2.5-2.5M9.5 19.5 12 17l2.5 2.5" />
+                  <path d="m5.2 9.5 3.4.7-.7-3.4M18.8 14.5l-3.4-.7.7 3.4" />
+                  <path d="m18.8 9.5-3.4.7.7-3.4M5.2 14.5l3.4-.7-.7 3.4" />
+                </svg>
+              )}
+
+            </div>
+
+            <h3>{item.title}</h3>
+
+            <p>{item.description}</p>
+
+          </article>
+        ))
+      }
+    </div>
+
+  </div>
+</section>
+
+<style>
+.emergency-problems {
+  padding: 110px 24px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(239, 68, 68, 0.08),
+      transparent 34%
+    ),
+    #f8fafc;
+}
+
+.container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.section-header {
+  max-width: 790px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.overline {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #dc2626;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+.overline::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #dc2626, #f97316);
+}
+
+.section-header h2 {
+  margin: 0 0 20px;
+  color: #0f172a;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -1.4px;
+}
+
+.section-header p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.problem-card {
+  position: relative;
+  min-height: 330px;
+  padding: 36px;
+  overflow: hidden;
+  border: 2px solid #e7ebf0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.problem-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2626, #f97316);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-10px);
+  border-color: #f97316;
+  box-shadow:
+    0 0 26px rgba(249, 115, 22, 0.17),
+    0 24px 55px rgba(15, 23, 42, 0.13);
+}
+
+.problem-card:hover::before {
+  transform: scaleX(1);
+}
+
+.icon-wrap {
+  display: grid;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 26px;
+  place-items: center;
+  border: 1px solid #fecaca;
+  border-radius: 18px;
+  color: #dc2626;
+  background: #fef2f2;
+  animation: emergencyPulse 3s ease-in-out infinite;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.problem-card:nth-child(2) .icon-wrap {
+  animation-delay: 0.3s;
+}
+
+.problem-card:nth-child(3) .icon-wrap {
+  animation-delay: 0.6s;
+}
+
+.card-icon {
+  width: 35px;
+  height: 35px;
+  overflow: visible;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.35s ease;
+}
+
+.problem-card:hover .icon-wrap {
+  color: #ffffff;
+  background: linear-gradient(135deg, #dc2626, #f97316);
+  transform: translateY(-4px) scale(1.07);
+  box-shadow:
+    0 0 22px rgba(239, 68, 68, 0.3),
+    0 14px 32px rgba(249, 115, 22, 0.22);
+}
+
+.problem-card:hover .card-icon {
+  transform: rotate(6deg) scale(1.08);
+}
+
+.problem-card h3 {
+  margin: 0 0 15px;
+  color: #0f172a;
+  font-size: 1.4rem;
+  line-height: 1.28;
+  transition: color 0.35s ease;
+}
+
+.problem-card:hover h3 {
+  color: #dc2626;
+}
+
+.problem-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+@keyframes emergencyPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.055);
+  }
+}
+
+@media (max-width: 900px) {
+  .problems-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .emergency-problems {
+    padding: 82px 16px;
+  }
+
+  .section-header {
+    margin-bottom: 42px;
+    text-align: left;
+  }
+
+  .overline::after {
+    margin-left: 0;
+  }
+
+  .problem-card {
+    padding: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .problem-card,
+  .problem-card::before,
+  .icon-wrap,
+  .card-icon {
+    transition: none;
+  }
+
+  .icon-wrap {
+    animation: none;
+  }
+
+  .problem-card:hover,
+  .problem-card:hover .icon-wrap {
+    transform: none;
+  }
+}
+</style>
